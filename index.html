@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>Island Paradise</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,15 +11,53 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            margin: 0;
+            background: linear-gradient(135deg, #87CEEB, #FFD700);
+            overflow: hidden;
         }
-        h1 {
-            font-size: 36px;
-            color: #333;
+
+        .emoji-container {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 90vw;
+        }
+
+        .emoji {
+            font-size: clamp(3rem, 10vw, 8rem);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Individual animation delays */
+        .emoji:nth-child(1) { animation-delay: 0s; }
+        .emoji:nth-child(2) { animation-delay: 0.5s; }
+        .emoji:nth-child(3) { animation-delay: 1s; }
+        .emoji:nth-child(4) { animation-delay: 1.5s; }
+        .emoji:nth-child(5) { animation-delay: 2s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @media (max-width: 600px) {
+            .emoji {
+                font-size: clamp(2rem, 8vw, 6rem);
+            }
+            .emoji-container {
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Coming Soon...</h1>
+    <div class="emoji-container">
+        <span class="emoji">🌺</span>
+        <span class="emoji">🌊</span>
+        <span class="emoji">🐢</span>
+        <span class="emoji">🏝️</span>
+        <span class="emoji">☀️</span>
+    </div>
 </body>
 </html>
